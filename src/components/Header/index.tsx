@@ -20,6 +20,10 @@ import shield from '../../assets/images/icons/shield.png';
 import eye from '../../assets/images/icons/eye.png';
 import notEye from '../../assets/images/icons/notEye.png';
 import magnifyingGlass from '../../assets/images/icons/magnifyingGlass.png';
+import bell from '../../assets/images/icons/bell.png';
+import calendar from '../../assets/images/icons/calendar.png';
+import chatText from '../../assets/images/icons/chatText.png';
+import userArea from '../../assets/images/icons/userArea.png';
 
 const Header: React.FC = () => {
   const [isClicked, setIsClicked] = useState(false);
@@ -114,7 +118,27 @@ const Header: React.FC = () => {
             marginLeft: 134,
           }}
         />
-        <SearchBar />
+        <SearchBar placeholder="Pesquisar" />
+        <img
+          src={chatText}
+          alt="chat text"
+          style={{ width: 24, height: 24, marginLeft: 20 }}
+        />
+        <img
+          src={calendar}
+          alt="calendar"
+          style={{ width: 24, height: 24, marginLeft: 20 }}
+        />
+        <img
+          src={bell}
+          alt="bell"
+          style={{ width: 24, height: 24, marginLeft: 20 }}
+        />
+        <img
+          src={userArea}
+          alt="userArea"
+          style={{ width: 50, height: 50, marginLeft: 20 }}
+        />
       </SearchBarArea>
     </HeaderContainer>
   );

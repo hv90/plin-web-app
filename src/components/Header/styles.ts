@@ -115,4 +115,9 @@ export const SearchBar = styled.input`
   height: 30px;
   border-radius: 5px;
   border: 0.5px solid #778899;
+
+  ::placeholder {
+    padding-left: 16px;
+    color: #778899;
+  }
 `;

@@ -26,6 +26,7 @@ export const AccountArea = styled.div`
 
   #caretUp {
     transform: rotate(180deg);
+    margin-left: 128px;
   }
 
   p {
@@ -60,6 +61,47 @@ export const AccountInfo = styled.div`
   }
 `;
 
+export const AccountDropdownArea = styled.div`
+  position: absolute;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin-top: 17px;
+  margin-left: -130px;
+  width: 276px;
+  height: 100%;
+  max-height: 239px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 0px 2px 20px rgba(44, 74, 125, 0.2175);
+`;
+
+export const AccountDropdownInfo = styled.div`
+  width: 255px;
+  height: 32px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 16px;
+  margin-bottom: 18px;
+
+  p {
+    font-family: 'LatoRegular';
+    color: #622ee5;
+    font-size: 10px;
+    line-height: 12px;
+    margin: 0;
+  }
+
+  .accountTitle {
+    margin-left: 16px;
+    text-align: left;
+    font-family: 'LatoRegular';
+    color: #172765;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0;
+  }
+`;
+
 export const BalanceArea = styled.div`
   width: 280px;
 
@@ -70,8 +112,9 @@ export const BalanceArea = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
+    width: 264px;
     padding: 0;
+    margin-left: 16px;
   }
 
   p {
@@ -105,7 +148,7 @@ export const BalanceArea = styled.div`
 export const SearchBarArea = styled.div`
   width: 370px;
   height: 100%;
-  margin-left: 10px;
+  margin-left: 250px;
   display: flex;
   align-items: center;
 `;

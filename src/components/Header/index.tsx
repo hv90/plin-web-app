@@ -197,26 +197,50 @@ const Header: React.FC = () => {
           }}
         />
         <SearchBar placeholder="Pesquisar" />
-        <img
-          src={chatText}
-          alt="chat text"
-          style={{ width: 24, height: 24, marginLeft: 20, cursor: 'pointer' }}
-        />
-        <img
-          src={calendar}
-          alt="calendar"
-          style={{ width: 24, height: 24, marginLeft: 20, cursor: 'pointer' }}
-        />
-        <img
-          src={bell}
-          alt="bell"
-          style={{ width: 24, height: 24, marginLeft: 20, cursor: 'pointer' }}
-        />
-        <img
-          src={userArea}
-          alt="userArea"
-          style={{ width: 50, height: 50, marginLeft: 20, cursor: 'pointer' }}
-        />
+        <button
+          type="button"
+          style={{
+            backgroundColor: 'transparent',
+            padding: 0,
+            border: 'none',
+          }}
+        >
+          <img
+            src={chatText}
+            alt="chat text"
+            style={{ width: 24, height: 24, marginLeft: 20, cursor: 'pointer' }}
+          />
+        </button>
+        <button
+          type="button"
+          style={{ backgroundColor: 'transparent', padding: 0, border: 'none' }}
+        >
+          <img
+            src={calendar}
+            alt="calendar"
+            style={{ width: 24, height: 24, marginLeft: 20, cursor: 'pointer' }}
+          />
+        </button>
+        <button
+          type="button"
+          style={{ backgroundColor: 'transparent', padding: 0, border: 'none' }}
+        >
+          <img
+            src={bell}
+            alt="bell"
+            style={{ width: 24, height: 24, marginLeft: 20, cursor: 'pointer' }}
+          />
+        </button>
+        <button
+          type="button"
+          style={{ backgroundColor: 'transparent', padding: 0, border: 'none' }}
+        >
+          <img
+            src={userArea}
+            alt="userArea"
+            style={{ width: 50, height: 50, marginLeft: 20, cursor: 'pointer' }}
+          />
+        </button>
       </SearchBarArea>
     </HeaderContainer>
   );

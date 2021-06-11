@@ -6,7 +6,6 @@ export const HeaderContainer = styled.div`
   height: 71px;
   width: 100%;
   background-color: #ffffff;
-  border-bottom: 1px solid black;
 `;
 
 export const LogoArea = styled.div`

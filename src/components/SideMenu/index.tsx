@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import {
   SideMenuContainer,
@@ -23,16 +23,10 @@ const SideMenu: React.FC = () => {
 
   const sideMenuSwitchHandler = () => {
     setIsToggled(current => !current);
-    setTimeout(() => {
-      // do nothing
-    }, 4000);
   };
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     setIsToggled(current => !current);
-    setTimeout(() => {
-      // setIsClicked(current => !current);
-    }, 4000);
   }, []);
 
   return (

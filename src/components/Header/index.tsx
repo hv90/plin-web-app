@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 
 import logo from '../../assets/images/logo.svg';
+
+import { mockAccounts } from '../../mock';
 
 import {
   AccountArea,
@@ -30,7 +32,7 @@ import copiedBranch from '../../assets/images/icons/copiedBranch.png';
 import copiedAccount from '../../assets/images/icons/copiedAccount.png';
 
 const Header: React.FC = () => {
-  const [isClicked, setIsClicked] = useState(false);
+  const [isClicked, setIsClicked] = useState(true);
   const [isAccountCopied, setIsAccountCopied] = useState(false);
   const [isBranchCopied, setIsBranchCopied] = useState(false);
   const [shouldShowBalance, setShouldShowBalance] = useState(false);
@@ -66,6 +68,10 @@ const Header: React.FC = () => {
     }, 2000);
   };
 
+  useLayoutEffect(() => {
+    setIsClicked(current => !current);
+  }, []);
+
   return (
     <HeaderContainer>
       <LogoArea>
@@ -92,55 +98,15 @@ const Header: React.FC = () => {
               style={{ width: 10, height: 5, marginTop: -8, marginLeft: 236 }}
             />
             <AccountDropdownArea>
-              <AccountDropdownInfo>
-                <p className="accountTitle">Conta Corrente</p>
-                <div style={{ display: 'flex' }}>
-                  <p>Ag. hello-1</p>
-                  <p style={{ marginLeft: 15 }}>C.C. 00000000000000000020-1</p>
-                </div>
-              </AccountDropdownInfo>
-              <AccountDropdownInfo>
-                <p className="accountTitle">Conta Corrente</p>
-                <div style={{ display: 'flex' }}>
-                  <p>Ag. hello-1</p>
-                  <p style={{ marginLeft: 15 }}>C.C. 00000000000000000020-1</p>
-                </div>
-              </AccountDropdownInfo>
-              <AccountDropdownInfo>
-                <p className="accountTitle">Conta Corrente</p>
-                <div style={{ display: 'flex' }}>
-                  <p>Ag. hello-1</p>
-                  <p style={{ marginLeft: 15 }}>C.C. 00000000000000000020-1</p>
-                </div>
-              </AccountDropdownInfo>
-              <AccountDropdownInfo>
-                <p className="accountTitle">Conta Corrente</p>
-                <div style={{ display: 'flex' }}>
-                  <p>Ag. hello-1</p>
-                  <p style={{ marginLeft: 15 }}>C.C. 00000000000000000020-1</p>
-                </div>
-              </AccountDropdownInfo>
-              <AccountDropdownInfo>
-                <p className="accountTitle">Conta Corrente</p>
-                <div style={{ display: 'flex' }}>
-                  <p>Ag. hello-1</p>
-                  <p style={{ marginLeft: 15 }}>C.C. 00000000000000000020-1</p>
-                </div>
-              </AccountDropdownInfo>
-              <AccountDropdownInfo>
-                <p className="accountTitle">Conta Corrente</p>
-                <div style={{ display: 'flex' }}>
-                  <p>Ag. hello-1</p>
-                  <p style={{ marginLeft: 15 }}>C.C. 00000000000000000020-1</p>
-                </div>
-              </AccountDropdownInfo>
-              <AccountDropdownInfo>
-                <p className="accountTitle">Conta Corrente</p>
-                <div style={{ display: 'flex' }}>
-                  <p>Ag. hello-1</p>
-                  <p style={{ marginLeft: 15 }}>C.C. 00000000000000000020-1</p>
-                </div>
-              </AccountDropdownInfo>
+              {mockAccounts.map(account => (
+                <AccountDropdownInfo>
+                  <p className="accountTitle">{account.title}</p>
+                  <div style={{ display: 'flex' }}>
+                    <p>{account.branch}</p>
+                    <p style={{ marginLeft: 15 }}>{account.account}</p>
+                  </div>
+                </AccountDropdownInfo>
+              ))}
             </AccountDropdownArea>
           </div>
         )}

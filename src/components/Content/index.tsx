@@ -23,32 +23,18 @@ import {
 } from './styles';
 
 const Content: React.FC = () => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [isDropdownClicked, setIsDropdownClicked] = useState(false);
-  const [isShareClicked, setIsShareClicked] = useState(false);
-  const [isDownloadClicked, setIsDownloadClicked] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isDropdownClicked, setIsDropdownClicked] = useState(true);
+  const [isShareClicked, setIsShareClicked] = useState(true);
+  const [isDownloadClicked, setIsDownloadClicked] = useState(true);
   const [isPauseClicked, setIsPauseClicked] = useState(false);
 
   const refreshHandler = () => {
     setIsLoading(current => !current);
     setTimeout(() => {
-      // setIsLoading(current => !current);
+      setIsLoading(current => !current);
     }, 4000);
   };
-
-  useLayoutEffect(() => {
-    if (isLoading) {
-      setTimeout(() => {
-        setIsLoading(current => !current);
-      }, 4000);
-    }
-
-    if (isDownloadClicked) {
-      setTimeout(() => {
-        setIsDownloadClicked(current => !current);
-      }, 3950);
-    }
-  }, [isLoading, isDownloadClicked]);
 
   const dropdownHandler = () => {
     setIsDropdownClicked(current => !current);
@@ -60,14 +46,18 @@ const Content: React.FC = () => {
 
   const downloadHandler = () => {
     setIsDownloadClicked(current => !current);
-    setTimeout(() => {
-      // do nothing
-    }, 4000);
   };
 
   const pauseHandler = () => {
     setIsPauseClicked(current => !current);
   };
+
+  useLayoutEffect(() => {
+    setIsLoading(current => !current);
+    setIsDownloadClicked(current => !current);
+    setIsShareClicked(current => !current);
+    setIsDropdownClicked(current => !current);
+  }, []);
 
   return (
     <ContentContainer>
@@ -90,11 +80,13 @@ const Content: React.FC = () => {
           <DownloadMenuContainer>
             <div style={{ display: 'flex', alignItems: 'center' }}>
               <p className="loading">Baixando</p>
-              <div style={{ marginLeft: -160, marginTop: 7 }}>
-                <AnimatedRefreshIcon>
-                  <div />
-                </AnimatedRefreshIcon>
-              </div>
+              {!isPauseClicked && (
+                <div style={{ marginLeft: -160, marginTop: 7 }}>
+                  <AnimatedRefreshIcon>
+                    <div />
+                  </AnimatedRefreshIcon>
+                </div>
+              )}
               <p className="loading" style={{ marginLeft: 10 }}>
                 201kb
               </p>
@@ -109,7 +101,11 @@ const Content: React.FC = () => {
               <p id="name">Saldo %NomeDadoParaAConta% %DataDaConsulta%.pdf</p>
               <button
                 type="button"
-                style={{ backgroundColor: 'transparent', border: 'none' }}
+                style={{
+                  backgroundColor: 'transparent',
+                  border: 'none',
+                  cursor: 'pointer',
+                }}
                 onClick={pauseHandler}
               >
                 {!isPauseClicked && (
@@ -130,7 +126,11 @@ const Content: React.FC = () => {
             </div>
             <button
               type="button"
-              style={{ backgroundColor: 'transparent', border: 'none' }}
+              style={{
+                backgroundColor: 'transparent',
+                border: 'none',
+                cursor: 'pointer',
+              }}
               onClick={downloadHandler}
             >
               <img
@@ -150,9 +150,37 @@ const Content: React.FC = () => {
         </button>
         {isShareClicked && (
           <ShareMenuContainer>
-            <p>Enviar por e-mail</p>
-            <p>Enviar por WhatsApp</p>
-            <p>Enviar por opção 3</p>
+            <button
+              type="button"
+              style={{
+                backgroundColor: 'transparent',
+                border: 'none',
+                cursor: 'pointer',
+              }}
+            >
+              <p>Enviar por e-mail</p>
+            </button>
+
+            <button
+              type="button"
+              style={{
+                backgroundColor: 'transparent',
+                border: 'none',
+                cursor: 'pointer',
+              }}
+            >
+              <p>Enviar por WhatsApp</p>
+            </button>
+            <button
+              type="button"
+              style={{
+                backgroundColor: 'transparent',
+                border: 'none',
+                cursor: 'pointer',
+              }}
+            >
+              <p>Enviar por opção 3</p>
+            </button>
           </ShareMenuContainer>
         )}
       </div>
@@ -210,6 +238,7 @@ const Content: React.FC = () => {
                   padding: '12 28 12 28',
                   marginTop: 20,
                   cursor: 'pointer',
+                  border: 'none',
                 }}
               >
                 <p

@@ -2,6 +2,8 @@ import React, { useState, useLayoutEffect } from 'react';
 
 import caretDownBigger from '../../assets/images/icons/caretDownBigger.png';
 import refresh from '../../assets/images/icons/refresh.png';
+import pause from '../../assets/images/icons/pause.png';
+import X from '../../assets/images/icons/X.png';
 import ShowButtonWider from '../ShowButtonWider';
 
 import {
@@ -71,7 +73,36 @@ const Content: React.FC = () => {
         </button>
         {isDownloadClicked && (
           <DownloadMenuContainer>
-            <p id="loading">Baixando</p>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <p className="loading">Baixando</p>
+              <div style={{ marginLeft: -160, marginTop: 7 }}>
+                <AnimatedRefreshIcon>
+                  <div />
+                </AnimatedRefreshIcon>
+              </div>
+              <p className="loading" style={{ marginLeft: 10 }}>
+                201kb
+              </p>
+              <div
+                style={{
+                  height: 25,
+                  width: 1,
+                  backgroundColor: '#E5E4E2',
+                  marginLeft: 10,
+                }}
+              />
+              <p id="name">Saldo %NomeDadoParaAConta% %DataDaConsulta%.pdf</p>
+              <img
+                src={pause}
+                alt="pause"
+                style={{ marginLeft: 10, width: 24, height: 24 }}
+              />
+            </div>
+            <img
+              src={X}
+              alt="X"
+              style={{ width: 24, height: 24, marginRight: 20 }}
+            />
           </DownloadMenuContainer>
         )}
         <button

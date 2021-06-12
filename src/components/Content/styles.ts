@@ -212,16 +212,25 @@ export const DownloadMenuContainer = styled.div`
   margin-left: -66px;
   position: absolute;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   background-color: #ffffff;
   box-shadow: 0 2px 20px rgba(44, 74, 125, 0.2175);
   color: #172765;
 
-  #loading {
+  .loading {
     font-family: LatoRegular;
     font-weight: 400;
     font-size: 14px;
     line-height: 17px;
     margin-left: 40px;
+  }
+
+  #name {
+    font-family: RalewaySemiBold;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    margin-left: 10px;
   }
 `;

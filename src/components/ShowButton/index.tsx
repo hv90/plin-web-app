@@ -70,7 +70,6 @@ const ShowButton: React.FC<Props> = ({ title, value }: Props) => {
               style={{
                 display: 'flex',
                 flexDirection: 'column',
-                marginTop: 10,
               }}
             >
               <div

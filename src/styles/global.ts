@@ -17,7 +17,7 @@ const GlobalStyles = createGlobalStyle`
   }
   body {
     width: 100%;
-    overflow-x: hidden;
+    overflow-y: hidden;
     display: block;
   }
   `;

@@ -48,78 +48,75 @@ const Header: React.FC = () => {
       <AccountArea>
         <button type="button" onClick={dropDownHandler}>
           <p>Conta Corrente &nbsp;</p>
-          {!isClicked && <img src={caretDown} alt="caret down" />}
-          {isClicked && (
-            <div style={{ display: 'flex', flexDirection: 'column' }}>
-              <img src={caretDown} alt="caret up" id="caretUp" />
-              <AccountDropdownArea>
-                <AccountDropdownInfo>
-                  <p className="accountTitle">Conta Corrente</p>
-                  <div style={{ display: 'flex' }}>
-                    <p>Ag. hello-1</p>
-                    <p style={{ marginLeft: 15 }}>
-                      C.C. 00000000000000000020-1
-                    </p>
-                  </div>
-                </AccountDropdownInfo>
-                <AccountDropdownInfo>
-                  <p className="accountTitle">Conta Corrente</p>
-                  <div style={{ display: 'flex' }}>
-                    <p>Ag. hello-1</p>
-                    <p style={{ marginLeft: 15 }}>
-                      C.C. 00000000000000000020-1
-                    </p>
-                  </div>
-                </AccountDropdownInfo>
-                <AccountDropdownInfo>
-                  <p className="accountTitle">Conta Corrente</p>
-                  <div style={{ display: 'flex' }}>
-                    <p>Ag. hello-1</p>
-                    <p style={{ marginLeft: 15 }}>
-                      C.C. 00000000000000000020-1
-                    </p>
-                  </div>
-                </AccountDropdownInfo>
-                <AccountDropdownInfo>
-                  <p className="accountTitle">Conta Corrente</p>
-                  <div style={{ display: 'flex' }}>
-                    <p>Ag. hello-1</p>
-                    <p style={{ marginLeft: 15 }}>
-                      C.C. 00000000000000000020-1
-                    </p>
-                  </div>
-                </AccountDropdownInfo>
-                <AccountDropdownInfo>
-                  <p className="accountTitle">Conta Corrente</p>
-                  <div style={{ display: 'flex' }}>
-                    <p>Ag. hello-1</p>
-                    <p style={{ marginLeft: 15 }}>
-                      C.C. 00000000000000000020-1
-                    </p>
-                  </div>
-                </AccountDropdownInfo>
-                <AccountDropdownInfo>
-                  <p className="accountTitle">Conta Corrente</p>
-                  <div style={{ display: 'flex' }}>
-                    <p>Ag. hello-1</p>
-                    <p style={{ marginLeft: 15 }}>
-                      C.C. 00000000000000000020-1
-                    </p>
-                  </div>
-                </AccountDropdownInfo>
-                <AccountDropdownInfo>
-                  <p className="accountTitle">Conta Corrente</p>
-                  <div style={{ display: 'flex' }}>
-                    <p>Ag. hello-1</p>
-                    <p style={{ marginLeft: 15 }}>
-                      C.C. 00000000000000000020-1
-                    </p>
-                  </div>
-                </AccountDropdownInfo>
-              </AccountDropdownArea>
-            </div>
+          {!isClicked && (
+            <img
+              src={caretDown}
+              alt="caret down"
+              style={{ width: 10, height: 5, marginTop: 5 }}
+            />
           )}
         </button>
+        {isClicked && (
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <img
+              src={caretDown}
+              alt="caret up"
+              id="caretUp"
+              style={{ width: 10, height: 5, marginTop: -8, marginLeft: 236 }}
+            />
+            <AccountDropdownArea>
+              <AccountDropdownInfo>
+                <p className="accountTitle">Conta Corrente</p>
+                <div style={{ display: 'flex' }}>
+                  <p>Ag. hello-1</p>
+                  <p style={{ marginLeft: 15 }}>C.C. 00000000000000000020-1</p>
+                </div>
+              </AccountDropdownInfo>
+              <AccountDropdownInfo>
+                <p className="accountTitle">Conta Corrente</p>
+                <div style={{ display: 'flex' }}>
+                  <p>Ag. hello-1</p>
+                  <p style={{ marginLeft: 15 }}>C.C. 00000000000000000020-1</p>
+                </div>
+              </AccountDropdownInfo>
+              <AccountDropdownInfo>
+                <p className="accountTitle">Conta Corrente</p>
+                <div style={{ display: 'flex' }}>
+                  <p>Ag. hello-1</p>
+                  <p style={{ marginLeft: 15 }}>C.C. 00000000000000000020-1</p>
+                </div>
+              </AccountDropdownInfo>
+              <AccountDropdownInfo>
+                <p className="accountTitle">Conta Corrente</p>
+                <div style={{ display: 'flex' }}>
+                  <p>Ag. hello-1</p>
+                  <p style={{ marginLeft: 15 }}>C.C. 00000000000000000020-1</p>
+                </div>
+              </AccountDropdownInfo>
+              <AccountDropdownInfo>
+                <p className="accountTitle">Conta Corrente</p>
+                <div style={{ display: 'flex' }}>
+                  <p>Ag. hello-1</p>
+                  <p style={{ marginLeft: 15 }}>C.C. 00000000000000000020-1</p>
+                </div>
+              </AccountDropdownInfo>
+              <AccountDropdownInfo>
+                <p className="accountTitle">Conta Corrente</p>
+                <div style={{ display: 'flex' }}>
+                  <p>Ag. hello-1</p>
+                  <p style={{ marginLeft: 15 }}>C.C. 00000000000000000020-1</p>
+                </div>
+              </AccountDropdownInfo>
+              <AccountDropdownInfo>
+                <p className="accountTitle">Conta Corrente</p>
+                <div style={{ display: 'flex' }}>
+                  <p>Ag. hello-1</p>
+                  <p style={{ marginLeft: 15 }}>C.C. 00000000000000000020-1</p>
+                </div>
+              </AccountDropdownInfo>
+            </AccountDropdownArea>
+          </div>
+        )}
         <AccountInfo>
           <p>Ag. 00005-1</p>
           <p style={{ marginLeft: 15 }}>C.C. 00000000000000000020-1</p>

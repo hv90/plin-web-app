@@ -29,6 +29,7 @@ export const AccountArea = styled.div`
   }
 
   p {
+    margin: 0;
     font-family: 'LatoRegular';
     color: #172765;
     font-size: 16px;
@@ -64,8 +65,9 @@ export const AccountDropdownArea = styled.div`
   position: absolute;
   overflow-y: scroll;
   overflow-x: hidden;
-  margin-top: 17px;
-  margin-left: -130px;
+  margin-top: 0px;
+  margin-left: -25px;
+  z-index: 2;
   width: 276px;
   height: 100%;
   max-height: 239px;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 
 import {
   SideMenuContainer,
@@ -15,6 +15,7 @@ import {
   HelpIcon,
   SideMenuSwitcherIcon,
   SideMenuSwitcherReverseIcon,
+  Button,
 } from './styles';
 
 const SideMenu: React.FC = () => {
@@ -22,7 +23,17 @@ const SideMenu: React.FC = () => {
 
   const sideMenuSwitchHandler = () => {
     setIsToggled(current => !current);
+    setTimeout(() => {
+      // do nothing
+    }, 4000);
   };
+
+  useLayoutEffect(() => {
+    setIsToggled(current => !current);
+    setTimeout(() => {
+      // setIsClicked(current => !current);
+    }, 4000);
+  }, []);
 
   return (
     <>
@@ -38,15 +49,10 @@ const SideMenu: React.FC = () => {
           <BillingIcon />
           <ManagementIcon />
           <HelpIcon />
-
-          <button
-            type="button"
-            style={{ backgroundColor: 'transparent', border: 'none' }}
-            onClick={sideMenuSwitchHandler}
-          >
+          <Button type="button" onClick={sideMenuSwitchHandler}>
             {!isToggled && <SideMenuSwitcherIcon />}
             {isToggled && <SideMenuSwitcherReverseIcon />}
-          </button>
+          </Button>
         </SideMenuContainer>
       )}
 
@@ -65,14 +71,10 @@ const SideMenu: React.FC = () => {
             <HelpIcon />
           </div>
 
-          <button
-            type="button"
-            style={{ backgroundColor: 'transparent', border: 'none' }}
-            onClick={sideMenuSwitchHandler}
-          >
+          <Button type="button" onClick={sideMenuSwitchHandler}>
             {!isToggled && <SideMenuSwitcherIcon />}
             {isToggled && <SideMenuSwitcherReverseIcon />}
-          </button>
+          </Button>
         </SideMenuContainerRetracted>
       )}
     </>

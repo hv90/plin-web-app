@@ -21,6 +21,7 @@ import summaryHover from '../../assets/images/icons/summaryHover.png';
 import transfer from '../../assets/images/icons/transfer.png';
 import transferHover from '../../assets/images/icons/transferHover.png';
 import sideMenuSwitcher from '../../assets/images/icons/sideMenuSwitcher.png';
+import sideMenuSwitcherHover from '../../assets/images/icons/sideMenuSwitcherHover.png';
 
 export const SideMenuContainer = styled.div`
   @keyframes open {
@@ -34,9 +35,15 @@ export const SideMenuContainer = styled.div`
   margin-top: -46px;
   margin-left: 0;
   width: 46px;
+  height: 100%;
   background-color: #f9f9f9;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  animation: open 1s;
+  animation: open 1.2s ease-in-out;
+
+  button {
+    background-color: transparent;
+    border: none;
+  }
 `;
 
 export const SideMenuContainerRetracted = styled.div`
@@ -54,7 +61,7 @@ export const SideMenuContainerRetracted = styled.div`
   width: 46px;
   background-color: #f9f9f9;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  animation: retract 1s;
+  animation: retract 1.2s ease-in-out;
 `;
 
 export const BalanceIcon = styled.div`
@@ -172,6 +179,10 @@ export const SideMenuSwitcherIcon = styled.div`
   margin-left: 26px;
   cursor: pointer;
   background-image: url(${sideMenuSwitcher});
+
+  &:hover {
+    background-image: url(${sideMenuSwitcherHover});
+  }
 `;
 
 export const SideMenuSwitcherReverseIcon = styled.div`
@@ -181,4 +192,12 @@ export const SideMenuSwitcherReverseIcon = styled.div`
   cursor: pointer;
   background-image: url(${sideMenuSwitcher});
   transform: rotate(180deg);
+  &:hover {
+    background-image: url(${sideMenuSwitcherHover});
+  }
+`;
+
+export const Button = styled.button`
+  background-color: transparent;
+  border: none;
 `;

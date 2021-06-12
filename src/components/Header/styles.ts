@@ -1,11 +1,25 @@
 import styled from 'styled-components';
 
+import popoverCopy from '../../assets/images/icons/popoverCopy.png';
+import popoverCopyAll from '../../assets/images/icons/popoverCopyAll.png';
+
 export const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
   height: 71px;
   width: 100%;
   background-color: #ffffff;
+
+  #copy:after {
+    content: url(${popoverCopyAll});
+    position: absolute;
+    margin-left: -35px;
+    visibility: hidden;
+  }
+
+  #copy:hover:after {
+    visibility: visible;
+  }
 `;
 
 export const LogoArea = styled.div`
@@ -58,6 +72,30 @@ export const AccountInfo = styled.div`
     font-size: 12px;
     line-height: 14px;
     margin-top: 5px;
+  }
+
+  #branch:after {
+    content: url(${popoverCopy});
+    position: absolute;
+    margin-top: -25px;
+    margin-left: -25px;
+    visibility: hidden;
+  }
+
+  #branch:hover:after {
+    visibility: visible;
+  }
+
+  #account:after {
+    content: url(${popoverCopy});
+    position: absolute;
+    margin-top: -25px;
+    margin-left: -85px;
+    visibility: hidden;
+  }
+
+  #account:hover:after {
+    visibility: visible;
   }
 `;
 

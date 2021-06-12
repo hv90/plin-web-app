@@ -26,9 +26,13 @@ import bell from '../../assets/images/icons/bell.png';
 import calendar from '../../assets/images/icons/calendar.png';
 import chatText from '../../assets/images/icons/chatText.png';
 import userArea from '../../assets/images/icons/userArea.png';
+import copiedBranch from '../../assets/images/icons/copiedBranch.png';
+import copiedAccount from '../../assets/images/icons/copiedAccount.png';
 
 const Header: React.FC = () => {
   const [isClicked, setIsClicked] = useState(false);
+  const [isAccountCopied, setIsAccountCopied] = useState(false);
+  const [isBranchCopied, setIsBranchCopied] = useState(false);
   const [shouldShowBalance, setShouldShowBalance] = useState(false);
 
   const dropDownHandler = () => {
@@ -37,6 +41,29 @@ const Header: React.FC = () => {
 
   const showBalanceHandler = () => {
     setShouldShowBalance(current => !current);
+  };
+
+  const copyBothHandler = () => {
+    setIsAccountCopied(current => !current);
+    setIsBranchCopied(current => !current);
+    setTimeout(() => {
+      setIsAccountCopied(current => !current);
+      setIsBranchCopied(current => !current);
+    }, 2000);
+  };
+
+  const copyAccountHandler = () => {
+    setIsAccountCopied(current => !current);
+    setTimeout(() => {
+      setIsAccountCopied(current => !current);
+    }, 2000);
+  };
+
+  const copyBranchHandler = () => {
+    setIsBranchCopied(current => !current);
+    setTimeout(() => {
+      setIsBranchCopied(current => !current);
+    }, 2000);
   };
 
   return (
@@ -118,21 +145,75 @@ const Header: React.FC = () => {
           </div>
         )}
         <AccountInfo>
-          <p>Ag. 00005-1</p>
-          <p style={{ marginLeft: 15 }}>C.C. 00000000000000000020-1</p>
+          <button
+            type="button"
+            style={{ backgroundColor: 'transparent', border: 'none' }}
+            onClick={copyBranchHandler}
+          >
+            <p id="branch">Ag. 00005-1</p>
+          </button>
+          <button
+            type="button"
+            style={{ backgroundColor: 'transparent', border: 'none' }}
+            onClick={copyAccountHandler}
+          >
+            <p id="account" style={{ marginLeft: 15 }}>
+              C.C. 00000000000000000020-1
+            </p>
+          </button>
         </AccountInfo>
       </AccountArea>
-      <img
-        src={copy}
-        alt="copy"
+
+      <button
+        type="button"
+        id="copy"
         style={{
-          marginTop: 28,
-          right: 20,
-          width: 16,
-          height: 16,
+          backgroundColor: 'transparent',
+          border: 'none',
+          marginLeft: 10,
           cursor: 'pointer',
         }}
-      />
+        onClick={copyBothHandler}
+      >
+        <img
+          src={copy}
+          alt="copy"
+          style={{
+            marginTop: 28,
+            right: 20,
+            width: 16,
+            height: 16,
+          }}
+        />
+      </button>
+
+      <div>
+        {isAccountCopied && (
+          <img
+            src={copiedAccount}
+            alt="copied account"
+            style={{
+              width: 344,
+              height: 48,
+              position: 'absolute',
+              marginTop: 225,
+            }}
+          />
+        )}
+        {isBranchCopied && (
+          <img
+            src={copiedBranch}
+            alt="copied branch"
+            style={{
+              width: 344,
+              height: 48,
+              position: 'absolute',
+              marginTop: 285,
+            }}
+          />
+        )}
+      </div>
+
       <BalanceArea>
         <button type="button" onClick={showBalanceHandler}>
           {!shouldShowBalance && (

@@ -22,6 +22,7 @@ const TopMenu: React.FC = () => {
           <img src={tag} alt="tag" style={{ width: 36, height: 36 }} />
         </button>
         <button
+          id="plus"
           type="button"
           style={{
             backgroundColor: 'transparent',

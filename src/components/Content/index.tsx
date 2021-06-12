@@ -3,6 +3,7 @@ import React, { useState, useLayoutEffect } from 'react';
 import caretDownBigger from '../../assets/images/icons/caretDownBigger.png';
 import refresh from '../../assets/images/icons/refresh.png';
 import pause from '../../assets/images/icons/pause.png';
+import play from '../../assets/images/icons/play.png';
 import X from '../../assets/images/icons/X.png';
 import ShowButtonWider from '../ShowButtonWider';
 
@@ -26,6 +27,7 @@ const Content: React.FC = () => {
   const [isDropdownClicked, setIsDropdownClicked] = useState(false);
   const [isShareClicked, setIsShareClicked] = useState(false);
   const [isDownloadClicked, setIsDownloadClicked] = useState(false);
+  const [isPauseClicked, setIsPauseClicked] = useState(false);
 
   const refreshHandler = () => {
     setIsLoading(current => !current);
@@ -40,7 +42,13 @@ const Content: React.FC = () => {
         setIsLoading(current => !current);
       }, 4000);
     }
-  }, [isLoading]);
+
+    if (isDownloadClicked) {
+      setTimeout(() => {
+        setIsDownloadClicked(current => !current);
+      }, 3950);
+    }
+  }, [isLoading, isDownloadClicked]);
 
   const dropdownHandler = () => {
     setIsDropdownClicked(current => !current);
@@ -52,6 +60,13 @@ const Content: React.FC = () => {
 
   const downloadHandler = () => {
     setIsDownloadClicked(current => !current);
+    setTimeout(() => {
+      // do nothing
+    }, 4000);
+  };
+
+  const pauseHandler = () => {
+    setIsPauseClicked(current => !current);
   };
 
   return (
@@ -92,17 +107,38 @@ const Content: React.FC = () => {
                 }}
               />
               <p id="name">Saldo %NomeDadoParaAConta% %DataDaConsulta%.pdf</p>
-              <img
-                src={pause}
-                alt="pause"
-                style={{ marginLeft: 10, width: 24, height: 24 }}
-              />
+              <button
+                type="button"
+                style={{ backgroundColor: 'transparent', border: 'none' }}
+                onClick={pauseHandler}
+              >
+                {!isPauseClicked && (
+                  <img
+                    src={pause}
+                    alt="pause"
+                    style={{ marginLeft: 10, width: 24, height: 24 }}
+                  />
+                )}
+                {isPauseClicked && (
+                  <img
+                    src={play}
+                    alt="play"
+                    style={{ marginLeft: 10, width: 24, height: 24 }}
+                  />
+                )}
+              </button>
             </div>
-            <img
-              src={X}
-              alt="X"
-              style={{ width: 24, height: 24, marginRight: 20 }}
-            />
+            <button
+              type="button"
+              style={{ backgroundColor: 'transparent', border: 'none' }}
+              onClick={downloadHandler}
+            >
+              <img
+                src={X}
+                alt="X"
+                style={{ width: 24, height: 24, marginRight: 20 }}
+              />
+            </button>
           </DownloadMenuContainer>
         )}
         <button
@@ -121,15 +157,22 @@ const Content: React.FC = () => {
         )}
       </div>
       <BalanceDropdownArea>
-        <BalanceDropdownInfoArea>
-          <p id="title">Data do Saldo</p>
-          <p id="date">07/12/2020</p>
-        </BalanceDropdownInfoArea>
         <button
           type="button"
           onClick={dropdownHandler}
-          style={{ border: 'none', backgroundColor: 'transparent' }}
+          style={{
+            border: 'none',
+            backgroundColor: 'transparent',
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+          }}
         >
+          <BalanceDropdownInfoArea>
+            <p id="title">Data do Saldo</p>
+            <p id="date">07/12/2020</p>
+          </BalanceDropdownInfoArea>
+
           <img
             src={caretDownBigger}
             alt="caret down"
@@ -166,6 +209,7 @@ const Content: React.FC = () => {
                   borderRadius: 5,
                   padding: '12 28 12 28',
                   marginTop: 20,
+                  cursor: 'pointer',
                 }}
               >
                 <p

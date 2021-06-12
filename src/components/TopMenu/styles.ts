@@ -1,11 +1,25 @@
 import styled from 'styled-components';
 
+import popoverNew from '../../assets/images/icons/popoverNew.png';
+
 export const TopMenuContainer = styled.div`
   width: 100%;
   height: 44px;
   display: flex;
   align-items: center;
   margin-left: 46px;
+
+  #plus:after {
+    content: url(${popoverNew});
+    position: absolute;
+    margin-left: -35px;
+    margin-top: -25px;
+    visibility: hidden;
+  }
+
+  #plus:hover:after {
+    visibility: visible;
+  }
 `;
 
 export const TopMenuContainerCover = styled.div`

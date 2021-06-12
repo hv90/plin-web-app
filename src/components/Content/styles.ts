@@ -206,7 +206,7 @@ export const ShareMenuContainer = styled.div`
 `;
 
 export const DownloadMenuContainer = styled.div`
-  margin-top: calc(100% - 40px);
+  margin-top: 60%;
   height: 68px;
   width: 100%;
   margin-left: -66px;

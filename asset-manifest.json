@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/plin-web-app/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/plin-web-app/static/js/main.23f10235.chunk.js",
+    "main.js.map": "/plin-web-app/static/js/main.23f10235.chunk.js.map",
+    "runtime-main.js": "/plin-web-app/static/js/runtime-main.71ec464d.js",
+    "runtime-main.js.map": "/plin-web-app/static/js/runtime-main.71ec464d.js.map",
+    "static/js/2.f2bde344.chunk.js": "/plin-web-app/static/js/2.f2bde344.chunk.js",
+    "static/js/2.f2bde344.chunk.js.map": "/plin-web-app/static/js/2.f2bde344.chunk.js.map",
+    "static/js/3.5d801c41.chunk.js": "/plin-web-app/static/js/3.5d801c41.chunk.js",
+    "static/js/3.5d801c41.chunk.js.map": "/plin-web-app/static/js/3.5d801c41.chunk.js.map",
+    "index.html": "/plin-web-app/index.html",
+    "static/css/main.6dea0f05.chunk.css.map": "/plin-web-app/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.f2bde344.chunk.js.LICENSE.txt": "/plin-web-app/static/js/2.f2bde344.chunk.js.LICENSE.txt",
+    "static/media/LatoBold.5dd5aa02.ttf": "/plin-web-app/static/media/LatoBold.5dd5aa02.ttf",
+    "static/media/LatoRegular.9919edff.ttf": "/plin-web-app/static/media/LatoRegular.9919edff.ttf",
+    "static/media/RalewayBold.d1a96e2a.ttf": "/plin-web-app/static/media/RalewayBold.d1a96e2a.ttf",
+    "static/media/RalewaySemiBold.243af299.ttf": "/plin-web-app/static/media/RalewaySemiBold.243af299.ttf",
+    "static/media/logo.e753d0d7.svg": "/plin-web-app/static/media/logo.e753d0d7.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.71ec464d.js",
+    "static/js/2.f2bde344.chunk.js",
+    "static/css/main.6dea0f05.chunk.css",
+    "static/js/main.23f10235.chunk.js"
+  ]
+}
